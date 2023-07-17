@@ -10,8 +10,7 @@ from pathlib import Path
 from queries import queries_list
 from questions import question_list
 
-sql_path = Path.cwd() / 'data/SQL'
-raw_data_path = Path.cwd() / 'data/raw'
+from file_paths import sql_path
 
 conn = sqlite3.connect(sql_path / 'database')
 c = conn.cursor()

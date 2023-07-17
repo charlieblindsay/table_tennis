@@ -3,9 +3,7 @@ import streamlit as st
 
 from pathlib import Path
 
-sql_path = Path.cwd() / 'data/SQL'
-
-raw_data_path = Path.cwd() / 'data/raw'
+from file_paths import raw_data_path
 
 st.title('Table Tennis Table')
 

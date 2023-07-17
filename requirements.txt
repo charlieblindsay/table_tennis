@@ -1,5 +1,3 @@
-numpy
 streamlit
 plotly
 pandas
-sqlite3

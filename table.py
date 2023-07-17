@@ -16,7 +16,7 @@ df_table_tennis = pd.read_csv(raw_data_path / 'table_tennis_table.csv')
 
 st.dataframe(df_table_tennis)
 
-conn = sqlite3.connect(sql_path / 'database')
+conn = sqlite3.connect('data/sql/database')
 c = conn.cursor()
 
 question_number = st.radio(label = 'Choose Question Number', options = [1, 2, 3, 4, 5], index=0)

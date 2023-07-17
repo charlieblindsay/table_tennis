@@ -6,12 +6,10 @@ import plotly.express as px
 from queries import queries_list
 from questions import question_list
 
-from file_paths import sql_path, raw_data_path
-
 conn = sqlite3.connect('data/sql/database')
 c = conn.cursor()
 
-question_number = st.radio(label = 'Choose Question Number', options = [1, 2, 3, 4, 5], index=0)
+question_number = st.radio(label = 'Choose Question Number', options = [1, 2, 3, 4, 5, 6], index=0)
 query_list_index = question_number - 1
 st.subheader(f'Question: {question_list[query_list_index]}')
 
@@ -29,14 +27,14 @@ for match in matches:
     for i in range(len(match)):
         dict[i] = match[i]
     dict_list.append(dict)
-    if question_number > 1:
+    if question_number > 2:
         name_list.append(match[0])
         value_list.append(match[1])
 
 zipped = list(zip(name_list, value_list))
 df_names_values = pd.DataFrame(zipped, columns=['Name', 'Value'])
 
-if question_number > 1:
+if question_number > 2:
 
     visualization_option = st.radio(label = 'Table or pie chart', options = ['Table', 'Pie Chart'], index=0)
 
